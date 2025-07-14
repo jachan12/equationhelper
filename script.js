@@ -1,3 +1,4 @@
+
 // Hver side er nu et array af led: [{factor, xPow}]
 let leftTerms = [ { factor: 1, xPow: 1 }, { factor: 3, xPow: 0 } ]; // fx 1x + 3
 let rightTerms = [ { factor: 7, xPow: 0 } ]; // fx 7
@@ -273,7 +274,7 @@ let isCustomEq = false; // NYT: Om vi er i "Skriv selv"-tilstand
 function updateLevelDisplay() {
   const levelDisplay = document.getElementById("levelDisplay");
   if (levelDisplay) {
-    levelDisplay.textContent = isCustomEq ? "Skriv selv" : `Level: ${currentLevel}`;
+    levelDisplay.textContent = isCustomEq ? "Write yourself" : `Level: ${currentLevel}`;
   }
   // Marker valgt knap
   const btns = document.querySelectorAll("#levelBtns .level-btn");
