@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Equation Helper</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-content">
+    <span class="logo-icon">🧮</span>
+    <span class="logo-text">Equation Helper</span>
+  
+  </div>
+</header>
+
+<main class="container">
+  <section class="card card-main">
+    <div class="level-row">
+      <div id="levelBtns">
+        <button class="level-btn" type="button" id="customEqBtn"><span>✏️</span> Write your own</button>
+        <button class="level-btn" type="button" id="level1Btn"><span>🧩</span> Level 1</button>
+        <button class="level-btn" type="button" id="level2Btn"><span>🧩</span> Level 2</button>
+        <button class="level-btn" type="button" id="level3Btn"><span>🧩</span> Level 3</button>
+        <button class="level-btn" type="button" id="level4Btn"><span>🧩</span> Level 4</button>
+      </div>
+      <div id="levelDisplay"></div>
+    </div>
+
+    <div id="customEqInputRow" class="hidden custom-eq-row">
+      <label for="customEqInput">Enter your own equation (e.g. 2x-3=23):</label>
+      <input type="text" id="customEqInput" placeholder="Type equation here" aria-label="Enter your own equation">
+      <button id="customEqOkBtn" type="button">OK</button>
+    </div>
+
+    <div class="equation-row" aria-live="polite">
+      <span class="equation-label">Current equation:</span>
+      <span id="equationDisplay"></span>
+    </div>
+  </section>
+
+  <section class="card card-history">
+    <h2><span>📝</span> Step-by-step solution</h2>
+    <ul id="historyList"></ul>
+    <button id="undoStepBtn" type="button" style="margin-top:10px;">↩️ Undo last step</button>
+  </section>
+
+  <section class="card card-action">
+    <label for="operationStep">Enter operation (e.g. +3, -2, *2, /2, sqrt):</label>
+    <div class="action-row">
+      <input type="text" id="operationStep" placeholder="Applied to both sides of the equation" aria-label="Enter operation">
+      <button id="applyStepBtn" type="button">Apply step</button>
+      <button id="nextEquationBtn" type="button">Next equation</button>
+    </div>
+    <p id="feedback" aria-live="polite"></p>
+  </section>
+</main>
+
+<footer class="main-footer">
+  <span class="footer-note">Made by <b>Jacob Højgaard Hansen</b></span>
+</footer>
+
+<script src="levels.js"></script>
+<script src="script.js"></script>
+<script src="math.js"></script>
+
+</body>
+</html>
