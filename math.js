@@ -264,7 +264,7 @@ function undoStep() {
 function applyStep() {
   const inputStr = document.getElementById("operationStep").value.trim();
   if (inputStr.length < 1) {
-    alert("Use valid operation, fx +3, -2x, /2, *x eller sqrt");
+    alert("Please enter a valid operation, e.g. +3, -2x, /2, *x or sqrt");
     return;
   }
 
@@ -329,7 +329,7 @@ function applyStep() {
           isSolved = true;
         }
       } else {
-        alert("sqrt can only be used in equations with x^2=a, a=x^2 or a=b");
+        alert("sqrt can only be used for equations of the form x^2=a, a=x^2 or a=b");
         return;
       }
 
@@ -374,7 +374,7 @@ function applyStep() {
       document.getElementById("operationStep").value = "";
       return;
     } else {
-      alert("sqrt can only be used when the equations has x^2=a, a=x^2 or a=b");
+      alert("sqrt can only be used if both sides have one term and the form x^2=a, a=x^2 or a=b");
       return;
     }
   }
@@ -391,7 +391,7 @@ function applyStep() {
   } else {
     step = parseFloat(stepStr);
     if (isNaN(step)) {
-      alert("Write a valid number or x-term after the operation, e.g. +3, -2x, /2, x");
+      alert("Please enter a valid number or x-term after the operation, e.g. +3, -2x, /2, *x");
       return;
     }
     pow = 0;
@@ -413,7 +413,7 @@ function applyStep() {
       powMul = isXOp ? pow : 0;
     } else {
       if ((isXOp && toNumber(factor) === 0) || (!isXOp && step === 0)) {
-        alert("Kan ikke dividere med nul.");
+        alert("Cannot divide by zero.");
         return;
       }
       if (isXOp) {
@@ -437,7 +437,7 @@ function applyStep() {
       xPow: powAdd(t.xPow, powMul)
     }));
   } else {
-    alert("Only +, -, *, / with x or a number");
+    alert("Only +, -, *, / with x-terms or numbers are allowed.");
     return;
   }
 
@@ -568,7 +568,7 @@ function activateCustomEqMode() {
 function updateLevelDisplay() {
   const levelDisplay = document.getElementById("levelDisplay");
   if (levelDisplay) {
-    levelDisplay.textContent = window.isCustomEq ? "Write yourself" : `Level: ${window.currentLevel}`;
+    levelDisplay.textContent = window.isCustomEq ? "Skriv selv" : `Level: ${window.currentLevel}`;
   }
   const btns = document.querySelectorAll("#levelBtns .level-btn");
   btns.forEach((btn, idx) => {

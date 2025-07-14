@@ -121,7 +121,7 @@ function parseUserEquation(input) {
   // Split ved '='
   const [leftStr, rightStr] = input.split('=');
   if (!leftStr || !rightStr) {
-    throw new Error('Ugyldig ligning. Husk =');
+    throw new Error('Invalid equation. Remember to use =');
   }
 
   // Hjælpefunktion til at parse en side af ligningen
@@ -192,7 +192,7 @@ function parseUserEquation(input) {
         continue;
       }
       // Hvis ikke genkendt, ignorer eller kast fejl
-      throw new Error('Ugyldigt led: ' + term);
+      throw new Error('Invalid term: ' + term);
     }
     return terms;
   }

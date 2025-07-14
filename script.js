@@ -379,14 +379,14 @@ document.addEventListener("DOMContentLoaded", function () {
     customEqOkBtn.addEventListener("click", function () {
       const input = document.getElementById("customEqInput").value.trim();
       if (!input) {
-        alert("Indtast en ligning, fx 2x-3=23-x");
+        alert("Please enter an equation, e.g. 2x-3=23-x");
         return;
       }
       try {
         const eqObj = window.parseUserEquation(input);
         setCustomEquation(eqObj);
       } catch (e) {
-        alert("Kunne ikke forstå ligningen: " + e.message);
+        alert("Could not understand the equation: " + e.message);
       }
     });
   }
