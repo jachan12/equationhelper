@@ -149,8 +149,7 @@ function parseUserEquation(input) {
       if (xMatch) {
         let factor = xMatch[1];
         if (factor === '' || factor === '+') factor = 1;
-        el
-        e if (factor === '-') factor = -1;
+        else if (factor === '-') factor = -1;
         else factor = parseInt(factor, 10);
         terms.push({ factor, xPow: 1 });
         continue;
