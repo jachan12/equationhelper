@@ -568,7 +568,7 @@ function activateCustomEqMode() {
 function updateLevelDisplay() {
   const levelDisplay = document.getElementById("levelDisplay");
   if (levelDisplay) {
-    levelDisplay.textContent = window.isCustomEq ? "Skriv selv" : `Level: ${window.currentLevel}`;
+    levelDisplay.textContent = window.isCustomEq ? "Write yourself" : `Level: ${window.currentLevel}`;
   }
   const btns = document.querySelectorAll("#levelBtns .level-btn");
   btns.forEach((btn, idx) => {
