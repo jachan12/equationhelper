@@ -264,7 +264,7 @@ function undoStep() {
 function applyStep() {
   const inputStr = document.getElementById("operationStep").value.trim();
   if (inputStr.length < 1) {
-    alert("Indtast en gyldig operation, fx +3, -2x, /2, *x eller sqrt");
+    alert("Use valid operation, fx +3, -2x, /2, *x eller sqrt");
     return;
   }
 
@@ -329,7 +329,7 @@ function applyStep() {
           isSolved = true;
         }
       } else {
-        alert("sqrt kan kun bruges på formerne x^2=a, a=x^2 eller a=b");
+        alert("sqrt can only be used in equations with x^2=a, a=x^2 or a=b");
         return;
       }
 
@@ -374,7 +374,7 @@ function applyStep() {
       document.getElementById("operationStep").value = "";
       return;
     } else {
-      alert("sqrt kan kun bruges hvis begge sider har ét led og formen x^2=a, a=x^2 eller a=b");
+      alert("sqrt can only be used when the equations has x^2=a, a=x^2 or a=b");
       return;
     }
   }
@@ -391,7 +391,7 @@ function applyStep() {
   } else {
     step = parseFloat(stepStr);
     if (isNaN(step)) {
-      alert("Skriv et gyldigt tal eller x-led efter operationen, fx +3, -2x, /2, *x");
+      alert("Write a valid number or x-term after the operation, e.g. +3, -2x, /2, x");
       return;
     }
     pow = 0;
@@ -437,7 +437,7 @@ function applyStep() {
       xPow: powAdd(t.xPow, powMul)
     }));
   } else {
-    alert("Kun +, -, *, / med x-led eller tal er tilladt.");
+    alert("Only +, -, *, / with x or a number");
     return;
   }
 
@@ -568,7 +568,7 @@ function activateCustomEqMode() {
 function updateLevelDisplay() {
   const levelDisplay = document.getElementById("levelDisplay");
   if (levelDisplay) {
-    levelDisplay.textContent = window.isCustomEq ? "Skriv selv" : `Level: ${window.currentLevel}`;
+    levelDisplay.textContent = window.isCustomEq ? "Write yourself" : `Level: ${window.currentLevel}`;
   }
   const btns = document.querySelectorAll("#levelBtns .level-btn");
   btns.forEach((btn, idx) => {
